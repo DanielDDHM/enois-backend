@@ -131,14 +131,18 @@ explícito, nunca com comportamento genérico inventado.
 - [x] Trilha de auditoria dos atos de campanha na trilha única do sistema (`ROLEPLAY_*` em
   `audit_logs`) e leitura do histórico no painel (`GET /admin/roleplay/campaigns/{id}/history`,
   exclusiva de administrador, 404 para campanha desconhecida)
-- [ ] Observabilidade (métricas de eventos do módulo)
-- [ ] Revisão de segurança por fase
+- [x] Observabilidade (métricas de eventos do módulo no painel de monitorabilidade,
+  `GET /admin/monitoring/roleplay`)
+- [x] Revisão de segurança por fase (varredura de toda a superfície da API do módulo: voz da mesa
+  virou estado de mestre, a rota de voz cruza campanha e mesa, leitura de pedido de rolagem e
+  privacidade de ficha provadas por teste)
 
 ## 5. Próxima tarefa
 
-**Fase 9**: front — identidade visual própria (tema por campanha) no design system e telas de
-campanha, mesa, ficha e dados (o backend das Fases 0–8 está entregue). Em paralelo, restam na
-Fase 10 as métricas de eventos do módulo e a revisão de segurança por fase.
+**Nenhuma pendência de backend.** As fases 0 a 10 estão concluídas no backend com prova executada
+(código, testes verdes, docs e PRs para `qa` — aguardando revisão humana e merge, que é decisão de
+mantenedor). O que segue é acompanhamento das PRs abertas, os dois comentários de revisão do front
+(#898) e a validação de tela quando o front entrar em `qa`.
 
 Mundo da campanha (localizações, pistas, NPCs) com referência a partir das campanhas, seguindo o
 mesmo contrato das demais peças: aditivo, autorização na campanha (ver = participante, escrever =
